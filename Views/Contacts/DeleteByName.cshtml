@@ -14,34 +14,34 @@
     }
 
     h1 {
-        color: #dc3545; /* Red color for heading */
+        color: #dc3545;
     }
 
     .table {
-        background-color: #444; /* Dark background for table */
-        color: #fff; /* White text color */
+        background-color: #444; 
+        color: #fff; 
     }
 
         .table th {
-            background-color: #dc3545; /* Red background for table header */
-            color: #fff; /* White text color for table header */
+            background-color: #dc3545;
+            color: #fff; 
         }
 
         .table td, .table th {
-            border: 1px solid #dc3545; /* Red border for table cells */
+            border: 1px solid #dc3545; 
         }
 
         .table a {
-            color: #dc3545; /* Red color for links */
+            color: #dc3545; 
         }
 
             .table a:hover {
-                color: #c82333; /* Darker red color on hover */
+                color: #c82333; 
             }
 </style>
 
 <h1>@ViewData["Title"]</h1>
-<!-- Display messages -->
+
 @if (TempData["SuccessMessage"] != null)
 {
     <div class="alert alert-success">
@@ -57,7 +57,7 @@
 
 <form asp-controller="Contacts" asp-action="DeleteByNameCon" method="post" class="mb-3">
     <div class="input-group">
-        <input type="text" name="name" class="form-control" placeholder="Enter contact name to delete" />
+        <input type="text" name="name" class="form-control" placeholder="Enter contact's full name to delete" />
         <button type="submit" class="btn btn-danger">Delete</button>
     </div>
 </form>
