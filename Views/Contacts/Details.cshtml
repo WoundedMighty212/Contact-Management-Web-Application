@@ -1,0 +1,75 @@
+﻿@model Contact_Management_Web_Application.Models.Contact
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<style>
+    body {
+        background-color: #333;
+        color: #fff;
+        font-family: Arial, sans-serif;
+        padding: 20px;
+    }
+
+    h1, h4 {
+        color: #dc3545; /* Red color for headings */
+    }
+
+    .row .col-sm-2 {
+        font-weight: bold;
+        color: #dc3545; /* Red color for labels */
+    }
+
+    .row .col-sm-10 {
+        background-color: #444;
+        color: #fff;
+        border: 1px solid #dc3545;
+        padding: 10px;
+    }
+
+    a {
+        color: #dc3545;
+    }
+
+        a:hover {
+            color: #c82333;
+        }
+
+    hr {
+        border-top: 1px solid #dc3545;
+    }
+</style>
+
+
+
+<h1>Details</h1>
+
+<div>
+    <h4>Contact</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.ContactId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

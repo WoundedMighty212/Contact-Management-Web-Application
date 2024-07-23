@@ -1,0 +1,94 @@
+﻿@model Contact_Management_Web_Application.Models.Contact
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<style>
+    body {
+        background-color: #333;
+        color: #fff;
+        font-family: Arial, sans-serif;
+        padding: 20px;
+    }
+
+    h1, h4 {
+        color: #dc3545; /* Red color for headings */
+    }
+
+    .form-control {
+        background-color: #444;
+        color: #fff;
+        border: 1px solid #dc3545;
+    }
+
+    .control-label {
+        color: #dc3545; /* Red color for labels */
+    }
+
+    .text-danger {
+        color: #dc3545; /* Red color for validation messages */
+    }
+
+    .btn-primary {
+        background-color: #dc3545;
+        border-color: #dc3545;
+    }
+
+        .btn-primary:hover {
+            background-color: #c82333;
+            border-color: #bd2130;
+        }
+
+    .form-group {
+        margin-bottom: 1rem;
+    }
+
+    a {
+        color: #dc3545;
+    }
+
+        a:hover {
+            color: #c82333;
+        }
+</style>
+
+
+<h1>Edit</h1>
+
+<h4>Contact</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ContactId" />
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PhoneNumber" class="control-label"></label>
+                <input asp-for="PhoneNumber" class="form-control" />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
